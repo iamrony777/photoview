@@ -40,9 +40,10 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          platforms: linux/arm64/v8
+          platforms: linux/arm64/v8, linux/amd64
           build-args: |
             UI_PUBLIC_URL=/photos/
+            REACT_APP_API_ENDPOINT=/photos-api/
             VERSION=edge
             COMMIT_SHA=${{ env.COMMIT_SHA }}
             BUILD_DATE=${{ env.BUILD_DATE }}
