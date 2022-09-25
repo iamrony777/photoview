@@ -69,6 +69,7 @@ RUN go build -v -o photoview .
 ### Copy api and ui to production environment ###
 FROM debian:bookworm
 ARG TARGETPLATFORM
+VOLUME ["/app"]
 WORKDIR /app
 
 COPY api/data /app/data
